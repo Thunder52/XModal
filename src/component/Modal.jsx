@@ -39,8 +39,8 @@ const Modal = ({ setIsOpen }) => {
         
     }
   return (
-    <div className="modal">
-      <div className="modal-content">
+    <div className="modal" onClick={()=>setIsOpen(false)}>
+      <div className="modal-content" onClick={(e)=>e.stopPropagation()}>
         <h2>Fill Details</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-item">
@@ -49,7 +49,7 @@ const Modal = ({ setIsOpen }) => {
           </div>
           <div className="form-item">
             <label htmlFor="email">Email Address:</label>
-            <input type="email" id="emil" value={form.email} name="email" onChange={(e)=>change(e)} required />
+            <input type="email" id="email" value={form.email} name="email" onChange={(e)=>change(e)} required />
           </div>
           <div className="form-item">
             <label htmlFor="phone">Phone:</label>
